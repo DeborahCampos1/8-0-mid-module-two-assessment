@@ -122,10 +122,12 @@ function filterByGenre(movies,genres){
   }
     let match = movies.filter((movie)=> { 
       let array = movie.genre.toLowerCase().split(" ");
-      for (let a of array){
-        if (a === genres.toLowerCase()){
+        if (array.includes(genres.toLowerCase())){
           return movie;
-      }}});
+      }});
+      if(!match.length){
+        return [];
+      }
     return match;
 }
 
@@ -188,7 +190,9 @@ function getAllMoviesReleasedAtOrBeforeYear(movies, year) {
       { "James and the Giant Peach": "91%" },
     ];
  */
-function getRottenTomatoesScoreByMovie() {}
+function getRottenTomatoesScoreByMovie(movies) {
+
+}
 
 // Do not change anything below this line.
 module.exports = {
